@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 
@@ -19,6 +19,24 @@ export default function Home() {
       setExpression("");
     } else {
       setExpression((prevExpression) => prevExpression + value);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+  }, []);
+  const handleKeyPress = (e: any) => {
+    console.log(e);
+    const key = e.key;
+
+    if (/^[0-9+\-*/.=]$/.test(key)) {
+      e.preventDefault();
+      handleButtonClick(key);
+    } else if (key === "Enter") {
+      e.preventDefault();
+      handleButtonClick("=");
+    } else if (key === "Backspace") {
+      setExpression((prevExpression) => prevExpression.slice(0, -1));
     }
   };
 
@@ -53,7 +71,7 @@ export default function Home() {
                 type="text"
                 className="w-100  fs-3  border-bottom border-2 border-gray-400 text-dark text-center"
                 value={expression}
-                readOnly
+                onKeyDown={handleKeyPress}
               />
             </div>
 
