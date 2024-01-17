@@ -1,5 +1,5 @@
 "use client";
-// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
   ];
   return (
     <main className="d-flex min-vh-100 flex-column align-items-center p-24 bg-primary">
-      <h1 className="fs-1 font-bold">Calculator</h1>
+      <h1 className="fs-1 font-bold ">Calculator</h1>
       <div className=".bg-white p-6">
         <input
           type="text"
