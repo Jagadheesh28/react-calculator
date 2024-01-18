@@ -61,9 +61,9 @@ export default function Home() {
     "=",
   ];
   return (
-    <main className="d-flex min-vh-100 flex-column align-items-center p-24 bg-primary ">
+    <main className="d-flex min-vh-100 flex-column align-items-center p-24 bg-primary">
       <h1 className="fs-1 font-bold ">Calculator</h1>
-      <div className=".bg-white p-6 w-50">
+      <div className="bg-white p-6 w-50">
         <section>
           <div className="row">
             <div className="col-md-8">
